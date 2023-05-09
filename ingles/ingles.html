@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="shortcut icon" href="a.png">
+    <link rel="stylesheet" href="Style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loteria</title>
+    
+</head>
+<body>
+    <center>
+    <h1 id="jkjk">Loteria in english </h1>
+
+    <img src="" alt="" width="410" height="650" id="img">  </img>
+
+    <script>
+        const baraja = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,
+        21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40, 41,42,
+        43,44,45,46,47,48,49,50,51,52,53,54];
+
+        var cont = 0;
+
+        function desordena() {
+
+            cont = 0;
+
+            for (let i = baraja.length -1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i+1));
+                let k = baraja[i];
+                baraja[i] = baraja[j];
+                baraja[j] = k;
+            }
+
+            var img = document.getElementById("img"); img.src = baraja[cont] + ".jpg"; 
+    const audi = new Audio (baraja[cont] + ".m4a");
+            audi.play();
+            
+            } 
+
+            function siguiente() {
+
+            if (cont == 53){
+
+            }else{
+                cont=cont+1;
+            }
+
+            var img = document.getElementById("img"); img.src = baraja[cont] + ".jpg"; 
+    const audi = new Audio (baraja[cont] + ".m4a");
+            audi.play();
+            
+            } 
+
+            function atras() {
+
+            if (cont == 0){
+                
+            }else {
+                cont= cont-1;
+            }
+            
+            var img = document.getElementById("img"); img.src = baraja[cont] + ".jpg"; 
+    const audi = new Audio (baraja[cont] + ".m4a");
+            audi.play();
+            
+            } 
+
+            desordena();
+     
+    </script>
+    <br>
+    <button class="a"onclick="atras()">go back <img src="izq.png" width="30" height="30"></button> <button class="a"onclick="desordena()">restart<center><img src="cen.png" width="30" height="30"></center></button> <button class="a"onclick="siguiente()">continue<img src="der.png" width="30" height="30"></button>
+    </center>
+</body>
+</html>
